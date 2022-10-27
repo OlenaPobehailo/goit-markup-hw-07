@@ -28,6 +28,10 @@ body {
     gap: 30px;
 }
 
+.social-list {
+    gap: 10px;
+}
+
 .link {
     margin-top: 0;
     margin-bottom: 0;
@@ -54,19 +58,6 @@ p,
 ul {
     margin-top: 0;
     margin-bottom: 0;
-}
-
-.visually-hidden {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
 }
 
 .container {
@@ -197,23 +188,14 @@ ul {
 
 
 
-
-/* ================================= */
-
-.accent {
-    color: var(--accent-color);
-}
+/* Styles for Main */
 
 .section {
     padding-top: 94px;
     padding-bottom: 94px;
 }
 
-.section.feature {
-    padding-bottom: 0;
-}
-
-.section-title {
+.section__title {
     margin-bottom: 50px;
 
     color: var(--secondary-text-color);
@@ -222,11 +204,24 @@ ul {
     text-align: center;
 }
 
+.section__title--hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
 
 
-/*  Solutions section*/
 
-.solutions {
+/*   Solutions   */
+
+.solutions-section {
     max-width: 1600px;
     padding-top: 200px;
     padding-bottom: 200px;
@@ -245,7 +240,7 @@ ul {
     text-align: center;
 }
 
-.solutions .title {
+.solutions-section__title {
     margin: 0 auto 30px;
     width: 696px;
 
@@ -258,9 +253,14 @@ ul {
     text-transform: uppercase;
 }
 
-.solutions .order-button {
-    width: 216px;
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
     height: 50px;
+    margin: 0 auto;
 
     color: var(--primary-white-color);
     background: var(--accent-color);
@@ -279,25 +279,23 @@ ul {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.solutions .order-button:focus,
-.solutions .order-button:hover {
+.solutions-section__button {
+    width: 216px;
+    height: 50px;
+}
+
+.solutions-section__button:hover,
+.solutions-section__button-:focus {
     background-color: var(--dark-accent-color);
 }
 
+/* Feature section */
 
-
-/* Styles for feature list */
-
-.feature-list {
-    display: flex;
-    gap: 30px;
+.section--short {
+    padding-bottom: 0;
 }
 
-.feature-list .item {
-    flex-basis: calc((100% - 90px) / 4);
-}
-
-.feature-list .icon-wrapper {
+.feature-list__icon-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,11 +306,8 @@ ul {
     background: var(--secondary-bg-color);
 }
 
-.feature-list .icon {
-    display: block;
-}
 
-.feature-list .title {
+.feature-list__subtitle {
     margin-bottom: 10px;
 
     font-size: 14px;
@@ -321,26 +316,19 @@ ul {
     text-transform: uppercase;
 }
 
-.feature-list .text {
+.feature-list__text {
     line-height: 1.71;
 }
 
 
+
 /* Work section */
 
-.work-list {
-    display: flex;
-}
-
-.work-list .item:not(:last-child) {
-    margin-right: 30px;
-}
-
-.work-list .item {
+.work-list__item {
     position: relative;
 }
 
-.work-list .overlay {
+.work-list__overlay {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -354,7 +342,7 @@ ul {
     background: rgba(47, 48, 58, 0.8);
 }
 
-.work-list .overlay-text {
+.work-list__inscription {
     color: var(--primary-white-color);
 
     font-weight: 700;
@@ -367,27 +355,12 @@ ul {
 
 /* Team section */
 
-.team-section {
+.section--background {
     background-color: var(--secondary-bg-color);
 }
 
-.team-section .title {
-    color: var(--secondary-text-color);
-}
-
-.team-list {
-    display: flex;
-}
-
-.team-list .item {
+.team-card__meta {
     background-color: var(--primary-white-color);
-}
-
-.team-list .item:not(:last-child) {
-    margin-right: 30px;
-}
-
-.team-list .label {
     padding: 30px 32px;
 
     box-shadow:
@@ -397,7 +370,7 @@ ul {
     border-radius: 0px 0px 4px 4px;
 }
 
-.team-list .title {
+.team-card__name {
     margin-bottom: 10px;
 
     font-weight: 500;
@@ -406,19 +379,18 @@ ul {
     text-align: center;
 }
 
-.team-list .text {
+.team-card__position {
     margin-bottom: 16px;
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
 }
 
-.social-list {
-    display: flex;
-    gap: 10px;
+.social-list__link {
+    border-radius: 50%;
 }
 
-.social-list .social-link .icon {
+.social-list__icon {
     border: none;
     border-radius: 50%;
     background-color: var(--primary-white-color);
@@ -428,23 +400,17 @@ ul {
         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-link:hover .icon,
-.social-link:focus .icon {
+.social-list__link:hover .social-list__icon,
+.social-list__link:focus .social-list__icon {
     fill: var(--primary-white-color);
     background-color: var(--accent-color);
-    border-radius: 50%;
 }
 
 
 
 /* Client section */
 
-.client-list {
-    display: flex;
-    gap: 30px;
-}
-
-.client-list .client-link {
+.client-list__link {
     width: 170px;
     height: 92px;
     border: 1px solid #AFB1B8;
@@ -457,7 +423,7 @@ ul {
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client-list .icon {
+.client-list__icon {
     display: block;
 
     fill: var(--social-icon-color);
@@ -466,13 +432,30 @@ ul {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client-list .client-link:hover .icon,
-.client-list .client-link:hover,
-.client-list .client-link:focus .icon,
-.client-list .client-link:focus {
+
+.client-list__link:hover .client-list__icon,
+.client-list__link:hover,
+.client-list__link:focus .client-list__icon,
+.client-list__link:focus {
     fill: var(--accent-color);
     border-color: var(--accent-color);
 }
+
+
+
+
+/* ================================= */
+
+.accent {
+    color: var(--accent-color);
+}
+
+
+
+/* Client section */
+
+/* 
+
 
 
 
@@ -881,7 +864,7 @@ ul {
 .filter-list .item:not(:last-child) {
     margin-right: 8px;
 }
-
+/* /* 
 .button {
     height: 38px;
     padding: 0 22px;
@@ -902,7 +885,7 @@ ul {
         background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+} 
 
 .button:hover,
 .button:focus {
@@ -913,7 +896,7 @@ ul {
 
     background-color: var(--accent-color);
     color: var(--primary-white-color);
-}
+} */
 
 .portfolio {
     display: flex;
