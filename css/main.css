@@ -632,7 +632,7 @@ img {
 .address-list__link--color {
   color: rgba(255, 255, 255, 0.6);
 }
-.address-list__link--color:hover {
+.address-list__link--color:hover, .address-list__link--color:focus {
   color: #2196f3;
 }
 

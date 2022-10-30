@@ -35,7 +35,7 @@
 .address-list__link--color {
   color: $transparent-white-color;
 
-  &:hover {
+  &:hover, &:focus {
     color: $accent-color;
   }
 }
